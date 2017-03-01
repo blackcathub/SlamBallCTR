@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!-- Prime colours - blacks -->
+    <color name="colorPrimary">#222</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="bg_dimmer">#5000</color>
+
+<!-- Theme colours - honey orange -->
+    <color name="colorAccent">#FFA726</color>
+    <color name="bg_dark">#FDA</color>
+    <color name="bg_light">#FFE7C1</color>
+
+<!-- Support colours - accents -->
+    <color name="team_blue">#0169B5</color>
+    <color name="team_red">#EC1449</color>
+    <color name="super_red">#E60000</color>
+
+<!-- Shadows - greys -->
+    <color name="shadow_light">#888</color>
+    <color name="shadow_med">#555</color>
+    <color name="shadow_dark">#222</color>
+
+</resources>

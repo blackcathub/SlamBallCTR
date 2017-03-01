@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cat.black.slamballcounter.MainActivity"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <ImageView
+        android:id="@+id/bgimg"
+        android:src="@drawable/bg_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    
+    <RelativeLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bar_height">
+        
+        <ImageView
+            android:src="@drawable/topbar_bg2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+        
+        <ImageView
+            android:src="@drawable/topbar_heading2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_marginLeft="@dimen/bar_margin_v"
+            android:layout_marginRight="@dimen/bar_margin_v"
+            android:layout_marginTop="@dimen/bar_margin_top"
+            android:layout_marginBottom="@dimen/bar_margin_bottom"
+            android:scaleType="centerInside"/>
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/frame_margin"
+        android:layout_marginRight="@dimen/frame_margin"
+        android:layout_below="@id/topbar"
+        android:orientation="horizontal">
+    
+        <LinearLayout
+        android:id="@+id/main_team_a"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/frame_margin"
+        android:orientation="vertical">
+
+            <TextView
+                android:text="@string/team_a"
+                android:textSize="@dimen/txt_team_head"
+                android:textStyle="bold"
+                android:textColor="@color/team_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="@color/shadow_dark"
+                android:shadowRadius="2"
+                android:shadowDx="3"
+                android:shadowDy="3"/>
+
+            <LinearLayout
+                android:id="@+id/team_a_counters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/counter_margin_top"
+                android:layout_marginBottom="@dimen/counter_margin_bottom"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/team_a_scorebox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_margin="@dimen/counter_element_margin">
+
+                    <ImageView
+                        android:id="@+id/team_a_scorebox_bg"
+                        android:src="@drawable/score_shape"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"/>
+
+                    <TextView
+                        android:id="@+id/team_a_scorebox_label"
+                        android:text="@string/score"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/scorebox_label_drop"
+                        android:layout_centerHorizontal="true"
+                        android:shadowColor="@color/shadow_light"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                    <TextView
+                        android:id="@+id/team_a_score"
+                        android:text="0"
+                        android:textSize="@dimen/txt_score_display"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/scorebox_display_drop"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignBottom="@id/team_a_scorebox_bg"
+                        android:shadowColor="@color/shadow_light"
+                        android:shadowRadius="2"
+                        android:shadowDx="5"
+                        android:shadowDy="5"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/team_a_slambox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/counter_element_margin"
+                    android:layout_gravity="bottom">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/slambox_display_drop">
+
+                        <ImageView
+                            android:src="@drawable/score_shape"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/team_a_slam"
+                            android:text="0"
+                            android:textSize="@dimen/txt_slam_display"
+                            android:textColor="@color/super_red"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:shadowColor="@color/shadow_dark"
+                            android:shadowRadius="2"
+                            android:shadowDx="4"
+                            android:shadowDy="4"/>
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:src="@drawable/score_img_slam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_a_button_slam"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/button_img_slam"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:adjustViewBounds="true"/>
+
+                    <TextView
+                        android:text="@string/points_3"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="slammedTeamA"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_a_button_basket"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/middle_button_spacing"
+                android:layout_marginBottom="@dimen/middle_button_spacing">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/button_img_basket"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"/>
+
+                    <TextView
+                        android:text="@string/points_2"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="basketTeamA"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_a_button_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:src="@drawable/button_img_line"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:layout_marginTop="@dimen/button_lmargin_outter"
+                        android:layout_marginBottom="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"/>
+
+                    <TextView
+                        android:text="@string/points_3"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="lineTeamA"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:src="@android:color/darker_gray"
+            android:layout_width="@dimen/centerline_size"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/main_team_b"
+            android:layout_width="@dimen/zero"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/frame_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/team_b"
+                android:textSize="@dimen/txt_team_head"
+                android:textStyle="bold"
+                android:textColor="@color/team_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="@color/shadow_dark"
+                android:shadowRadius="2"
+                android:shadowDx="3"
+                android:shadowDy="3"/>
+
+            <LinearLayout
+                android:id="@+id/team_b_counters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/counter_margin_top"
+                android:layout_marginBottom="@dimen/counter_margin_bottom"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/team_b_slambox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/counter_element_margin"
+                    android:layout_gravity="bottom">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/slambox_display_drop">
+
+                        <ImageView
+                            android:src="@drawable/score_shape"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/team_b_slam"
+                            android:text="0"
+                            android:textSize="@dimen/txt_slam_display"
+                            android:textColor="@color/super_red"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:shadowColor="@color/shadow_dark"
+                            android:shadowRadius="2"
+                            android:shadowDx="4"
+                            android:shadowDy="4"/>
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:src="@drawable/score_img_slam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/team_b_scorebox"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_margin="@dimen/counter_element_margin">
+
+                    <ImageView
+                        android:id="@+id/team_b_scorebox_bg"
+                        android:src="@drawable/score_shape"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"/>
+
+                    <TextView
+                        android:text="@string/score"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/scorebox_label_drop"
+                        android:layout_centerHorizontal="true"
+                        android:shadowColor="@color/shadow_light"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                    <TextView
+                        android:id="@+id/team_b_score"
+                        android:text="0"
+                        android:textSize="@dimen/txt_score_display"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/scorebox_display_drop"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignBottom="@id/team_b_scorebox_bg"
+                        android:shadowColor="@color/shadow_light"
+                        android:shadowRadius="2"
+                        android:shadowDx="5"
+                        android:shadowDy="5"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_b_button_slam"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/points_3"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                    <ImageView
+                        android:src="@drawable/button_img_slam"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:adjustViewBounds="true"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="slammedTeamB"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_b_button_basket"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/middle_button_spacing"
+                android:layout_marginBottom="@dimen/middle_button_spacing">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/points_2"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                    <ImageView
+                        android:src="@drawable/button_img_basket"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="basketTeamB"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/team_b_button_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height">
+
+                <ImageView
+                    android:src="@drawable/button_shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:src="@drawable/button_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_h"
+                    android:layout_marginBottom="@dimen/button_deadzone_h"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/points_3"
+                        android:textSize="@dimen/txt_button_label"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_outter"
+                        android:layout_marginRight="@dimen/button_lmargin_inner"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:shadowColor="@color/shadow_med"
+                        android:shadowRadius="2"
+                        android:shadowDx="3"
+                        android:shadowDy="3"/>
+
+                    <ImageView
+                        android:src="@drawable/button_img_line"
+                        android:layout_width="@dimen/zero"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/button_lmargin_inner"
+                        android:layout_marginRight="@dimen/button_lmargin_outter"
+                        android:layout_marginTop="@dimen/button_lmargin_outter"
+                        android:layout_marginBottom="@dimen/button_lmargin_outter"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:background="@drawable/button_trans_selector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/button_deadzone_hm"
+                    android:layout_marginBottom="@dimen/button_deadzone_hm"
+                    android:onClick="lineTeamB"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/reset_call_button"
+        android:layout_width="@dimen/reset_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/reset_button_drop"
+        android:layout_below="@id/main_frame"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:src="@drawable/button_shadow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <ImageView
+            android:src="@drawable/button_shape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_deadzone_h"
+            android:layout_marginBottom="@dimen/button_deadzone_h"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:text="@string/reset"
+            android:textSize="@dimen/txt_reset_label"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:shadowColor="@color/shadow_med"
+            android:shadowRadius="2"
+            android:shadowDx="3"
+            android:shadowDy="3"/>
+
+        <ImageButton
+            android:id="@+id/reveal_reset_layer"
+            android:background="@drawable/button_trans_selector"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/button_deadzone_hm"
+            android:layout_marginBottom="@dimen/button_deadzone_hm"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reset_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topbar"
+        android:visibility="gone">
+
+        <ImageView
+            android:src="@drawable/dim_screen3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/layer_text"
+            android:text="@string/layer_tip"
+            android:textSize="@dimen/txt_team_head"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/dimmer_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/text_field_padding"
+            android:gravity="center"
+            android:shadowColor="@color/shadow_light"
+            android:shadowRadius="2"
+            android:shadowDx="3"
+            android:shadowDy="3"/>
+
+        <ImageButton
+            android:id="@+id/layer_red_reset"
+            android:background="@drawable/reset_trans_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/middle_button_spacing"
+            android:layout_below="@id/layer_text"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:id="@+id/layer_green_keep"
+            android:background="@drawable/keep_trans_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layer_red_reset"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

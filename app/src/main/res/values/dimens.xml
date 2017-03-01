@@ -1,0 +1,49 @@
+<resources>
+<!-- Element sizes and margins -->
+    <dimen name="zero">0dp</dimen>
+    <dimen name="frame_margin">8dp</dimen>
+    <dimen name="centerline_size">1dp</dimen>
+    <!-- Top logo bar -->
+    <dimen name="bar_height">120dp</dimen>
+    <dimen name="bar_margin_v">16dp</dimen>
+    <dimen name="bar_margin_top">16dp</dimen>
+    <dimen name="bar_margin_bottom">10dp</dimen>
+    <!-- Counters -->
+    <dimen name="counter_margin_top">8dp</dimen>
+    <dimen name="counter_margin_bottom">24dp</dimen>
+    <dimen name="counter_element_margin">4dp</dimen>
+    <dimen name="scorebox_label_drop">8dp</dimen>
+    <dimen name="scorebox_display_drop">12dp</dimen>
+    <dimen name="slambox_display_drop">20dp</dimen>
+    <!-- Score buttons -->
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_deadzone_h">8dp</dimen>
+    <dimen name="button_deadzone_hm">7dp</dimen>
+    <dimen name="button_deadzone_v">4dp</dimen>
+    <dimen name="button_lmargin_outter">8dp</dimen>
+    <dimen name="button_lmargin_inner">4dp</dimen>
+    <dimen name="middle_button_spacing">8dp</dimen>
+    <!-- Reset button & layer -->
+    <dimen name="reset_width">180dp</dimen>
+    <dimen name="reset_button_drop">40dp</dimen>
+    <dimen name="text_field_padding">16dp</dimen>
+
+<!-- Landscape specific sizes -->
+    <dimen name="land_bar_height">90dp</dimen>
+    <dimen name="land_bar_margin_top">24dp</dimen>
+    <dimen name="land_bar_margin_bottom">12dp</dimen>
+    <dimen name="land_counter_margin_v">8dp</dimen>
+    <dimen name="land_scorebox_label_drop">3dp</dimen>
+    <dimen name="land_scorebox_display_drop">4dp</dimen>
+    <dimen name="land_slambox_width">60dp</dimen>
+    <dimen name="land_reset_button_drop">8dp</dimen>
+    <dimen name="land_reset_button_space">16dp</dimen>
+
+<!-- Text sizes -->
+    <dimen name="txt_team_head">24sp</dimen>
+    <dimen name="txt_score_display">70sp</dimen>
+    <dimen name="txt_slam_display">35sp</dimen>
+    <dimen name="txt_button_label">14sp</dimen>
+    <dimen name="txt_reset_label">18sp</dimen>
+
+</resources>
