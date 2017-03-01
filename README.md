@@ -1,4 +1,4 @@
-# SlamBallCTR
+# SlamBall Score Counter _[SlamBallCTR]_ 
 >`PROJECT 3` for Googles Udacity Android Developement Course
 
 The 3rd project for Android Development Course was an app that can keep score for 2 teams during a match in a sport of choice. Requirements for the app specified that it should have separate counters and point buttons for each team as well as a Reset button to set counters back on 0 points. I chose SlamBall as the sport my app would keep scores for. In SlamBall a player can score 2 points when the ball is thrown and goes through the basket, 3 points when it's throw from behind the 3point line or also 3 points when a player jump and put it directly into the basket - this is called a slam.
@@ -15,3 +15,6 @@ I mainly focused on user experience what led to a few improvements making the ap
 
 Also since you don't want to loose your scores by accidently pressing [RESET] in the middle of the game I made the reset button call a separate screen layer where user can select to keep the scores or confirm he wanted to reset them. In case this happened by accident and the user surprised by something covering the whole screen pressed the "return" arrow on the phone I intercepted the press and made it exit the reset screen not the whole app. On top of that Save/RestoreInstanceState method was used to keep the displayed data while changing orientation and prevent accidental data loss.
 
+* **_DEMO VIDEO_**
+
+[![DEMO ON YOUTUBE](https://img.youtube.com/vi/2lkgV3Oj5Dg/0.jpg)](https://www.youtube.com/watch?v=2lkgV3Oj5Dg)
