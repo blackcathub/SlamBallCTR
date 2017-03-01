@@ -18,3 +18,13 @@ Also since you don't want to loose your scores by accidently pressing [RESET] in
 * **_DEMO VIDEO_**
 
 [![DEMO ON YOUTUBE](https://img.youtube.com/vi/2lkgV3Oj5Dg/0.jpg)](https://www.youtube.com/watch?v=2lkgV3Oj5Dg)
+
+* **_SCREENSHOTS_**
+
+Main app screen:
+
+<img src="https://cloud.githubusercontent.com/assets/25821037/23478904/13760ce2-fec3-11e6-9ce9-4e723e5a1514.png" align="center" height="420" > <img src="https://cloud.githubusercontent.com/assets/25821037/23478903/13712344-fec3-11e6-9cd5-aec5f441c617.png" align="center" width="420" >
+
+Reset layer:
+
+<img src="https://cloud.githubusercontent.com/assets/25821037/23478955/3c2ba048-fec3-11e6-9a45-98905c272ac1.png" align="center" height="420" > <img src="https://cloud.githubusercontent.com/assets/25821037/23478957/3c5608ce-fec3-11e6-85f9-33b50c8d0544.png" align="center" width="420" >
